@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to SchoolERP API</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/2335/2335156.png" type="image/x-icon">
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          background-color: #f0f8ff;
+          margin: 0;
+          padding: 20px;
+      }
+      h1 {
+        font-size: 3em;
+          color: #333;
+      }
+      p {
+          font-size: 2em;
+          color: #555;
+      }
+      .developer {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+          font-size: 1.5em;
+          color: #888;
+      }
+      .countdown {
+          font-size: 1.2em;
+          color: #ff0000;
+      }
+      .click-here {
+            right: 0;
+            width: 5em;
+            margin-left: 7em;
+        }
+    </style>
+  </head>
+  <body>
+      <img width="150" src="https://cdn-icons-png.flaticon.com/512/2335/2335156.png" alt="ME" >
+    <h1>Hello from the backend!</h1>
+    <p>
+      Redirecting you to the API docs in
+      <span class="countdown" id="countdown">5</span> seconds...
+    </p>
+    <div class="developer">
+      <img
+        src="https://media.tenor.com/qWWK-O83J5YAAAAi/click-here.gif"
+        alt="Click Here"
+        class="click-here"
+      />
+      <span>
+        Developed by 
+        <a href="https://linkedin.com/in/bhavesh-patil-92b7aa22a" target="_blank"
+          >Bhavesh Patil</a
+        >
+      </span>
+    </div>
+
+    <script>
+      let countdown = 5;
+      const countdownElement = document.getElementById('countdown');
+
+      const interval = setInterval(() => {
+          countdownElement.textContent = `${countdown}`;
+          countdown--;
+          if (countdown < 0) {
+              clearInterval(interval);
+              window.location.href = '/api-docs';
+          }
+      }, 1000);
+    </script>
+  </body>
+</html>
